@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PET SHOP</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+    <style>
+        #map{
+            position: absolute;left: 0;right: 0;top: 0;bottom: 0;background-repeat: no-repeat
+        }
+
+        .leaflet-marker-icon img{
+            src: ''
+        }
+    </style>
+</head>
+<body>
+    <div id="map">
+
+    </div>
+
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+    <script>
+        var map = L.map('map').setView([-8.6196556,115.2325087],11);
+
+        var icons = L.icon({
+            iconUrl: 'https://i.ibb.co/7nRsYY4/pet-insurance.png',
+
+            iconSize:     [38, 38], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [22, 37], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -26] // point from which the popup should open relative to the iconAnchor
+        });
+
+        L.tileLayer('https://maps.tilehosting.com/styles/streets/{z}/{x}/{y}.png?key=mrAiEHV6geNRkLP73Mnu',{
+            attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>'
+        }).addTo(map)
+
+        var marker1 = L.marker([-8.708337,115.185124],{icon: icons}).addTo(map).bindPopup(
+            "<b>PawzBali Pet Resort</b></br>"+
+            "Shop , Grooming , Boarding, Resort </br>"+
+            "Alamat : Jl. Pura Mertasari I No.1, Pemecutan Klod, Kuta, Kabupaten Badung, Bali 80361</br>"+
+            "Telp : 0812-1981-1988</br>"+
+            "Open : 09.00–18.00</br>"+
+            "Website : <a href='https://www.pawzbali.com/' target='_blank'>www.pawzbali.com</a>").openPopup();
+
+        var marker2 = L.marker([-8.7116168,115.1679242],{icon: icons}).addTo(map).bindPopup(
+            "<b>Bali Pet Shop Kuta</b></br>"+
+            "Shop , Grooming , Healthcare </br>"+
+            "Alamat : Jl. Kendedes No.5, Legian, Kuta, Kabupaten Badung, Bali 80361</br>"+
+            "Telp : (0361) 4754714</br>"+
+            "Open : 09.00–22.00</br>"+
+            "Website : <a href='http://www.balipetshop.co.id/' target='_blank'>www.balipetshop.co.id</a>").openPopup();
+
+        var marker3 = L.marker([-8.7065251,115.1830857],{icon: icons}).addTo(map).bindPopup(
+            "<b>Bahagia Petshop Sunset Road</b></br>"+
+            "Shop </br>"+
+            "Alamat : Jl. Sunset Road No.1i, Kuta, Kabupaten Badung, Bali 80361</br>"+
+            "Telp : 0819-9912-2026</br>"+
+            "Open : 09.00–22.30").openPopup();
+
+        var marker4 = L.marker([-8.6814268,115.1929272],{icon: icons}).addTo(map).bindPopup(
+            "<b>Bali Pet Shop Teuku Umar</b></br>"+
+            "Shop , Grooming , Healthcare </br>"+
+            "Alamat : Jl. Kendedes No.5, Legian, Kuta, Kabupaten Badung, Bali 80361</br>"+
+            "Telp : (0361) 4716636</br>"+
+            "Open : 09.00–22.00</br>"+
+            "Website : <a href='http://www.balipetshop.co.id/' target='_blank'>www.balipetshop.co.id</a>").openPopup();
+
+        var marker5 = L.marker([-8.686133,115.2159986],{icon: icons}).addTo(map).bindPopup(
+            "<b>Bali Pet Shop Sesetan</b></br>"+
+            "Shop , Grooming , Healthcare </br>"+
+            "Alamat : Jl. Raya Sesetan No.84A, Sesetan, Denpasar Sel., Kota Denpasar, Bali 80223</br>"+
+            "Telp : (0361) 264606</br>"+
+            "Open : 09.00–22.00</br>"+
+            "Website : <a href='http://www.balipetshop.co.id/' target='_blank'>www.balipetshop.co.id</a>").openPopup();
+
+        var marker6 = L.marker([-8.685352,115.230396],{icon: icons}).addTo(map).bindPopup(
+            "<b>JJ Pet House</b></br>"+
+            "Shop , Grooming , Boarding, Healthcare </br>"+
+            "Alamat : Jl. Tukad Batanghari No.77, Dauh Puri Klod, Denpasar Bar., Kota Denpasar, Bali 80225</br>"+
+            "Telp : 0812-3766-1234</br>"+
+            "Open : 09.00–22.00</br>"+
+            "Website : <a href='https://www.instagram.com/jjpethouse/' target='_blank'>www.instagram.com</a>").openPopup();
+
+        var marker7 = L.marker([-8.700893,115.2246408],{icon: icons}).addTo(map).bindPopup(
+            "<b>LUCKY PETSHOP</b></br>"+
+            "Shop </br>"+
+            "Alamat : Jl. Sidakarya No.51, Sesetan, Denpasar Sel., Kota Denpasar, Bali 80224</br>"+
+            "Telp : 0821-4383-2270</br>"+
+            "Open : 09.00–21.00</br>").openPopup();
+
+        var marker8 = L.marker([-8.6736636,115.2395827],{icon: icons}).addTo(map).bindPopup(
+            "<b>Bali Pet Shop Renon</b></br>"+
+            "Shop , Grooming , Healthcare </br>"+
+            "Alamat : Jl. Raya Puputan No.180, Panjer, Denpasar Tim., Kota Denpasar, Bali 80239</br>"+
+            "Telp : (0361) 2096634</br>"+
+            "Open : 09.00–22.00</br>"+
+            "Website : <a href='http://www.balipetshop.co.id/' target='_blank'>www.balipetshop.co.id</a>").openPopup();
+
+        var marker9 = L.marker([-8.6913516,115.2177152],{icon: icons}).addTo(map).bindPopup(
+            "<b>Happy Pets</b></br>"+
+            "Shop </br>"+
+            "Alamat : Jl. Raya Sesetan No.397, Sesetan, Denpasar Sel., Kota Denpasar, Bali 80223</br>"+
+            "Telp : 0821-4411-5699</br>"+
+            "Open : 09.00–21.00</br>").openPopup();
+
+        var marker10 = L.marker([-8.7111675,115.2198774],{icon: icons}).addTo(map).bindPopup(
+            "<b>Royal Benoa Petshop</b></br>"+
+            "Shop </br>"+
+            "Alamat : Jalan Raya Sesetan No.333 Pasar Taman Sari Grudugan, Pasar Wates No.Blok 12, Sesetan, Denpasar Sel., Kota Denpasar, Bali 80223</br>"+
+            "Telp : 0821-4403-0969</br>"+
+            "Open : 09.00–21.00</br>").openPopup();
+
+        var marker11 = L.marker([-8.5137672,115.2724135],{icon: icons}).addTo(map).bindPopup(
+            "<b>Pet shop Natalia</b></br>"+
+            "Shop </br>"+
+            "Alamat : No., Jalan Cok Gede Rai No.49, Peliatan, Ubud, Peliatan, Ubud, Kabupaten Gianyar, Bali 80571</br>"+
+            "Telp : 0812-3951-8689</br>"+
+            "Open : 09.00–22.00</br>").openPopup();
+
+        var marker12 = L.marker([-8.5240693,115.2652359],{icon: icons}).addTo(map).bindPopup(
+            "<b>Bahagia Pet Shop</b></br>"+
+            "Shop </br>"+
+            "Alamat : Jl. Made Lebah, Peliatan, Ubud, Kabupaten Gianyar, Bali 80571</br>"+
+            "Telp : 0819-9991-3113</br>"+
+            "Open : 09.00–19.00</br>").openPopup();
+
+        var marker13 = L.marker([-8.6059605,115.1712442],{icon: icons}).addTo(map).bindPopup(
+            "<b>Cesar PETSHOP</b></br>"+
+            "Shop </br>"+
+            "Alamat : Jl. Raya Dalung No.90D, Dalung, Kuta Utara, Kabupaten Badung, Bali 80361</br>"+
+            "Telp : 0812-8188-640</br>"+
+            "Open : 09.00–21.00</br>").openPopup();
+
+        var marker14 = L.marker([-8.6383386,115.1493446],{icon: icons}).addTo(map).bindPopup(
+            "<b>Bali Pet Shop Canggu</b></br>"+
+            "Shop , Grooming , Healthcare </br>"+
+            "Alamat : Jl. Raya Canggu, Canggu, Kuta Utara, Kabupaten Badung, Bali 80361</br>"+
+            "Telp : (0361) 9067879</br>"+
+            "Open : 09.00–22.00</br>"+
+            "Website : <a href='http://www.balipetshop.co.id/' target='_blank'>www.balipetshop.co.id</a>").openPopup();
+        
+        var marker15 = L.marker([-8.6526486,115.2085564],{icon: icons}).addTo(map).bindPopup(
+            "<b>Bali Pet Shop</b></br>"+
+            "Shop , Grooming , Healthcare </br>"+
+            "Alamat : Jl. Setia Budi No.23A, Pemecutan Kaja, Denpasar Utara, Kota Denpasar, Bali 80119</br>"+
+            "Telp : (0361) 428786</br>"+
+            "Open : 09.00–22.00</br>"+
+            "Website : <a href='http://www.balipetshop.co.id/' target='_blank'>www.balipetshop.co.id</a>").openPopup();
+
+    </script>
+</body>
+</html>
